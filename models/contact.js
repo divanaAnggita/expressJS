@@ -17,3 +17,22 @@ exports.fetchContactData = where => {
     });
   });
 };
+
+exports.manipulateContact = (data, where) => {
+  return new Promise((resolve, reject) => {
+    let queryData = data;
+    let queryString = 'INSERT INTO contact_us SET ?';
+
+    if (where) {
+      queryData = [data,where];
+      queryString = 'UPDATE contact_us SET ? WHERE ?';
+    }
+    connect.query(queryString, queryData, (error, result)=> {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  }); 
+};
