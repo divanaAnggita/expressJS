@@ -11,9 +11,9 @@ exports.getContactById = async (req, res) => {
     id_cotactUs: req.params.id,
   };
 
-  const admin = await contactModels.fetchContactData(where);
+  const contact = await contactModels.fetchContactData(where);
 
-  return res.send(admin);
+  return res.send(contact);
 };
 
 exports.postContact = (req, res) => {
@@ -27,6 +27,7 @@ exports.postContact = (req, res) => {
     subject: subject || '',
     message: message || '',
     survey: survey || '',
+    createdAt : new Date() || '',
   };
 
   contactModels

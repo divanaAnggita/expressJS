@@ -21,9 +21,9 @@ exports.postProduk = (req, res) => {
 
   const data = {
     id_admin : id_admin || '',
-    name : nama || '',
+    nama : nama || '',
     deskripsi : deskripsi || '',
-    // createdAt : moment().format('YYYY-MM-DD HH:mm:ss') || ''
+    createdAt : new Date() || '',
   };
 
   produkModels
@@ -43,7 +43,6 @@ exports.updateProduk = (req, res) => {
     id_admin : id_admin || '',
     nama : nama || '',
     deskripsi : deskripsi || '',
-    // updateAt : moment().format('YYYY-MM-DD HH:mm:ss') || '',
   };
 
   const where = {

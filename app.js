@@ -13,10 +13,12 @@ app.use(cookieParser());
 const adminRouter = require('./routes/admin');
 const produkRouter = require('./routes/produk');
 const contactRouter = require('./routes/contact');
+const fiturRouter = require('./routes/fitur');
 
 app.use('/admin', adminRouter);
 app.use('/produk', produkRouter);
 app.use('/contact', contactRouter);
+app.use('/fitur', fiturRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
