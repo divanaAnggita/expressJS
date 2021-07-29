@@ -24,15 +24,15 @@ exports.postFitur = (req, res) => {
     link : link || '',
     id_admin : id_admin || '',
   };
-
-  fiturModels
-    .manipulateFiturData(data)
+ console.log(data);
+ fiturModels
+    .manipulateFitur(data)
     .then(result => {
       return res.status(200).json(result);
     })
     .catch(err => {
       return res.status(500).json(err);
-    });
+    }); 
 };
 
 exports.updateFitur = (req, res) => {
@@ -49,7 +49,7 @@ exports.updateFitur = (req, res) => {
   };
 
   fiturModels
-    .manipulateFiturData(data, where)
+    .manipulateFitur(data, where)
     .then(result => {
       return res.status(200).json(result);
     })

@@ -7,4 +7,5 @@ router.get('/', fiturController.getFitur);
 router.get('/:id', fiturController.getFiturtById);
 router.post('/', fiturController.postFitur);
 router.put('/:id', fiturController.updateFitur);
+
 module.exports = router;
